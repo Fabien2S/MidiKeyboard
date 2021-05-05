@@ -1,0 +1,7 @@
+name: MidiKeyboard
+main: com.github.doubledashes.midikeyboard.MidiKeyboard
+version: 1
+commands:
+  midi:
+    description: Configures devices
+    usage: /midi [device]
