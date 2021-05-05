@@ -10,8 +10,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.sound.midi.*;
 
 public class MidiKeyboard extends JavaPlugin implements Receiver {
@@ -75,7 +73,6 @@ public class MidiKeyboard extends JavaPlugin implements Receiver {
     public void close() {
     }
 
-    @Nullable
     private Note createNote(int key) {
         int note = key % Note.Tone.TONES_COUNT;
         int octave = this.octaveOffset + ((key / Note.Tone.TONES_COUNT) - 1);
@@ -132,7 +129,7 @@ public class MidiKeyboard extends JavaPlugin implements Receiver {
     }
 
     @Override
-    public boolean onCommand(@Nonnull CommandSender sender, @Nonnull Command command, @Nonnull String label, @Nonnull String[] args) {
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         if (label.equals("midi") || label.equals("midikeyboard:midi")) {
             if (args.length < 1)
